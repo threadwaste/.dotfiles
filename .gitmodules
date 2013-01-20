@@ -18,7 +18,7 @@
 	url = https://github.com/majutsushi/tagbar.git
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
-	url = https://github.com//kien/ctrlp.vim.git
+	url = https://github.com//kien/ctrlp.vim
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
