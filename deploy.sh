@@ -21,7 +21,7 @@ fi
 bu=$df_dir/backup_`date +%s`
 mkdir -v $bu
 
-for i in `find $df_dir -maxdepth 1 -name ".*" ! -wholename $df_dir  ! -name ".git"`
+for i in `find $df_dir -maxdepth 1 -name ".*" ! -wholename $df_dir  ! -name ".git*"`
 do
   # for all .dotfiles: move to $bu if exists; create symlink
 
