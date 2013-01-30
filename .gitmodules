@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/molokai"]
 	path = .vim/bundle/molokai
 	url = https://github.com/tomasr/molokai
+[submodule ".vim/bundle/vim-vimbrant"]
+	path = .vim/bundle/vim-vimbrant
+	url = https://github.com/threadwaste/vim-vimbrant.git

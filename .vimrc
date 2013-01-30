@@ -57,7 +57,9 @@ set colorcolumn=+1
 
 " i love colors, oh my god
 syntax enable
-colorschem molokai
+set background=dark
+colorschem vimbrant
+highlight ColorColumn ctermbg=6
 
 " plug-in options and binds
 
