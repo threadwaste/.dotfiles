@@ -31,6 +31,7 @@ set ttimeoutlen=10
 
 " indent
 set autoindent
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 set shiftround
@@ -48,9 +49,14 @@ set ttimeout
 set completeopt=menuone,longest,preview
 
 " text management/visuals
+set formatoptions=qnr1
 set textwidth=80
-set cursorline
 set colorcolumn=+1
+
+set copyindent
+set preserveindent
+
+set cursorline
 
 " terminfo puking color? lie
 " set t_Co=256

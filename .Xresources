@@ -1,0 +1,52 @@
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+urxvt256c*termName:     xterm-256color
+urxvt256c*saveLines:    20000
+
+urxvt256c*scrollBar:true
+urxvt256c*scrollBar_right:true
+urxvt256c*transpscrollbar:true
+
+urxvt256c*font: xft:SourceCodePro-10
+urxvt256c*boldFont: xft:SourceCodePro Black-10
+
+urxvt256c*perl-ext-common: default,matcher
+urxvt256c*urlLauncher: /usr/bin/google-chrome
+urxvt256c*matcher.button: 1
+
+!base
+urxvt256c*depth:  32
+
+*background:      [80]#1b1d1e
+*foreground:      #a0a0a0
+*cursorColor:     #FC971F
+*cursorColor2:    #000000
+
+!black
+*color0:          #1b1d1e
+*color8:          #505354
+!red
+*color1:          #f92672
+*color9:          #ff5995
+!green
+*color2:          #82B414
+*color10:         #B6E354
+!yellow
+*color3:          #FD971F
+*color11:         #FEED6C
+!blue
+*color4:          #56C2D6
+*color12:         #8CEDFF
+!magenta
+*color5:          #8C54FE
+*color13:         #9E6FFE
+!cyan
+*color6:          #465457
+*color14:         #899CA1
+!white
+*color7:          #CCCCC6
+*color15:         #F8F8F2
