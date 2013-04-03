@@ -1,0 +1,15 @@
+[user]
+    email = tony@threadwaste.com
+    name = Anthony M.
+[diff]
+[color]
+    ui = auto
+[alias]
+    aa = add --all
+    b = branch
+    ci = commit
+    co = checkout
+    dc = diff --cached
+    st = status
+[merge]
+    tool = vimdiff

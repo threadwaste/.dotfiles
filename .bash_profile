@@ -1,6 +1,6 @@
 # terrible practice, but sure. why not?
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+    . ~/.bashrc
 fi
 
 # prompt
