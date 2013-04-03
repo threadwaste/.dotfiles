@@ -3,8 +3,16 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+if [ -f ~/bin/git-prompt.sh ]; then
+    . ~/bin/git-prompt.sh
+fi
+
+if [ -f ~/bin/git-completion.bash ]; then
+    . ~/bin/git-completion.bash
+fi
+
 # prompt
-export PS1="\u@\[\e[0;34m\]\h \[\e[0m\]\W$ "
+export PS1="\u@\[\e[0;34m\]\h \[\e[0m\]\W\$(__git_ps1)$ "
 
 # grep color-me-pretty
 alias grep='grep --color=auto'
