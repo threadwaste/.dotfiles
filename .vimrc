@@ -77,6 +77,19 @@ colorschem vimbrant
 
 " bindings and plug-in options
 
+" quick toggle line numbers
+function! ToggleLineNumbers()
+    if(&number == 1)
+        set nonumber
+    elseif(&relativenumber ==1)
+        set norelativenumber
+    else
+        set number
+    endif
+endfunc
+
+noremap <leader>n :call ToggleLineNumbers()<cr>
+
 " clear hlsearch
 nnoremap <cr> :nohlsearch<cr>
 
