@@ -11,6 +11,8 @@ if [ -f ~/bin/git-completion.bash ]; then
     . ~/bin/git-completion.bash
 fi
 
+export PATH=$PATH:~/bin
+
 # prompt
 export PS1="\u@\[\e[0;34m\]\h \[\e[0m\]\W\$(__git_ps1)$ "
 

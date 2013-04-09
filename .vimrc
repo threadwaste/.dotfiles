@@ -9,6 +9,7 @@ filetype plugin indent on
 
 set ruler
 set number
+set numberwidth=5
 set norelativenumber
 set hidden
 
@@ -20,8 +21,8 @@ set softtabstop=4
 set shiftround
 set backspace=indent,eol,start
 
-" reduce ruby to 2,2 width,tabstop; double down on 4,4 for python
-autocmd FileType ruby,haml,eruby,sass set ai sw=2 sts=2 et
+" double down on tabs: ruby and related 2,2; python 4,4
+autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
 
 " info
@@ -74,15 +75,24 @@ syntax enable
 set background=dark
 colorschem vimbrant
 
-" plug-in options and binds
+" bindings and plug-in options
+
+" clear hlsearch
+nnoremap <cr> :nohlsearch<cr>
 
 " nerdtree
 noremap <F2> :NERDTreeToggle<cr>
 inoremap <F2> <esc>:NERDTreeToggle<cr>
 
-" tagbar
-nnoremap <leader>o :TagbarOpenAutoClose<cr>
+let NERDTreeIgnore = [".*\.pyc$"]
 
-" lazy stash for /usr/share/vim/vimrc on OSX
+" syntastic
+let g:syntastic_enable_signs = 1
+let g:syntastic_check_on_open = 0
+
+" tagbar
+nnoremap <leader>o :TagbarToggle<cr>
+
+" lazy stash
 " set viminfo='10,\"100,:20,%,n~/.viminfo
 " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
