@@ -31,7 +31,6 @@ set showcmd
 set showmode
 
 " character displays
-set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set showbreak=↪
 
@@ -78,7 +77,10 @@ colorschem vimbrant
 " ---------
 " functions
 " ---------
+
 function! ToggleLineNumbers()
+    " toggle line number display
+
     if(&number == 1)
         set nonumber
     elseif(&relativenumber ==1)
@@ -89,6 +91,8 @@ function! ToggleLineNumbers()
 endfunc
 
 function! ToggleLineType()
+    " toggle between standard and relative line numbers
+
     if(&number == 1)
         set relativenumber
     elseif(&relativenumber ==1)
@@ -98,6 +102,15 @@ function! ToggleLineType()
     endif
 endfunc
 
+function! ToggleList()
+    " toggle list char display
+
+    if(&list == 1)
+        set nolist
+    else
+        set list
+    endif
+endfunc
 
 " --------
 " bindings
@@ -106,6 +119,9 @@ endfunc
 " toggle line numbers
 noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
+
+" toggle listchars
+noremap <leader>l :call ToggleList()<cr>
 
 " clear hlsearch
 nnoremap <cr> :nohlsearch<cr>
