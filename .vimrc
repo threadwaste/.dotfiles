@@ -21,7 +21,7 @@ set softtabstop=4
 set shiftround
 set backspace=indent,eol,start
 
-" double down on tabs: ruby and related 2,2; python 4,4
+" double down on tab configuration
 autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
 
@@ -75,9 +75,9 @@ syntax enable
 set background=dark
 colorschem vimbrant
 
-" bindings and plug-in options
-
-" quick toggle line numbers
+" ---------
+" functions
+" ---------
 function! ToggleLineNumbers()
     if(&number == 1)
         set nonumber
@@ -88,10 +88,31 @@ function! ToggleLineNumbers()
     endif
 endfunc
 
+function! ToggleLineType()
+    if(&number == 1)
+        set relativenumber
+    elseif(&relativenumber ==1)
+        set number
+    else
+        return
+    endif
+endfunc
+
+
+" --------
+" bindings
+" --------
+
+" toggle line numbers
 noremap <leader>n :call ToggleLineNumbers()<cr>
+noremap <leader>N :call ToggleLineType()<cr>
 
 " clear hlsearch
 nnoremap <cr> :nohlsearch<cr>
+
+" --------
+" plug-ins
+" --------
 
 " nerdtree
 noremap <F2> :NERDTreeToggle<cr>
