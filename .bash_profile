@@ -24,3 +24,4 @@ alias fgrep='fgrep --color=auto'
 # {pop,push}d shortened
 alias p='pushd'
 alias o='popd'
+
