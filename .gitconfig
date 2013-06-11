@@ -10,6 +10,7 @@
     ci = commit
     co = checkout
     dc = diff --cached
+    dl = diff --name-only
     st = status
 [merge]
     tool = vimdiff

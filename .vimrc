@@ -72,7 +72,7 @@ set cursorline
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorschem vimbrant
+colorschem base16-default
 
 " ---------
 " functions
