@@ -10,7 +10,6 @@ filetype plugin indent on
 set ruler
 set number
 set numberwidth=5
-set norelativenumber
 set hidden
 
 " indentation, the most important of things
