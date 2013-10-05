@@ -1,7 +1,22 @@
-" pathogen and plug-ins
+" vundle and plug-ins
 filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle
+Bundle 'gmarik/vundle'
+
+" ...and its Bundles
+Bundle 'chriskempson/base16-vim'
+Bundle 'wincent/Command-T'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-eunich'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
+Bundle 'slim-template/vim-slim'
+Bundle 'godlygeek/tabular'
 
 " basics
 set nocompatible
