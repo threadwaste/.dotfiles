@@ -71,7 +71,7 @@ set cursorline
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorschem base16-default
+colorschem base16-chalk
 
 " ---------
 " functions
