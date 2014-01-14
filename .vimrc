@@ -86,7 +86,7 @@ set cursorline
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorschem base16-chalk
+colorschem base16-default
 
 " ---------
 " functions
@@ -97,7 +97,7 @@ function! ToggleLineNumbers()
 
     if(&number == 1)
         set nonumber
-    elseif(&relativenumber ==1)
+    elseif(&relativenumber == 1)
         set norelativenumber
     else
         set number
@@ -107,12 +107,12 @@ endfunc
 function! ToggleLineType()
     " toggle between standard and relative line numbers
 
-    if(&number == 1)
-        set relativenumber
-    elseif(&relativenumber ==1)
+    if(&relativenumber == 1)
         set number
-    else
-        return
+        set norelativenumber
+    elseif(&number == 1)
+        set nonumber
+        set relativenumber
     endif
 endfunc
 
