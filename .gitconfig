@@ -1,7 +1,6 @@
 [user]
     email = tony@threadwaste.com
     name = Anthony M.
-[diff]
 [color]
     ui = auto
 [alias]
@@ -11,6 +10,9 @@
     co = checkout
     dc = diff --cached
     dl = diff --name-only
+    fa = fetch --all
     st = status
 [merge]
     tool = vimdiff
+[credential]
+	helper = cache --timeout=3600

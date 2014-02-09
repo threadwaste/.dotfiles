@@ -1,22 +1,26 @@
 " vundle and plug-ins
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vundle
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " ...and its Bundles
 Bundle 'chriskempson/base16-vim'
-Bundle 'wincent/Command-T'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-eunich'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
+Bundle 'godlygeek/tabular'
+Bundle 'hdima/python-syntax'
+Bundle 'repos-scala/scala-vundle'
+Bundle 'rodjek/vim-puppet'
 Bundle 'scrooloose/syntastic'
 Bundle 'slim-template/vim-slim'
-Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'wincent/Command-T'
 
 " basics
 set nocompatible
@@ -43,6 +47,11 @@ autocmd FileType python set sw=4 sts=4 et
 set title
 set showcmd
 set showmode
+set laststatus=2
+
+" wilds
+set wildignore=*.pyc
+set wildmenu
 
 " character displays
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
@@ -126,9 +135,10 @@ function! ToggleList()
     endif
 endfunc
 
-" --------
-" bindings
-" --------
+" --------------------
+" bindings and plugins
+" --------------------
+let mapleader=","
 
 " toggle line numbers
 noremap <leader>n :call ToggleLineNumbers()<cr>
@@ -140,22 +150,13 @@ noremap <leader>l :call ToggleList()<cr>
 " clear hlsearch
 nnoremap <cr> :nohlsearch<cr>
 
-" --------
-" plug-ins
-" --------
-
-" nerdtree
-noremap <F2> :NERDTreeToggle<cr>
-inoremap <F2> <esc>:NERDTreeToggle<cr>
-
-let NERDTreeIgnore = [".*\.pyc$"]
+" ctrlp
+noremap <leader>b :CommandTBuffer<cr>
+noremap <leader>T :CommandT<space>
 
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_open = 0
-
-" tagbar
-nnoremap <leader>o :TagbarToggle<cr>
 
 " lazy stash
 " set viminfo='10,\"100,:20,%,n~/.viminfo
