@@ -31,6 +31,11 @@ set number
 set numberwidth=5
 set hidden
 
+" backups
+set backup
+set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+
 " indentation, the most important of things
 set autoindent
 set expandtab
@@ -38,10 +43,6 @@ set shiftwidth=4
 set softtabstop=4
 set shiftround
 set backspace=indent,eol,start
-
-" double down on tab configuration
-autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
-autocmd FileType python set sw=4 sts=4 et
 
 " info
 set title
@@ -91,6 +92,11 @@ set copyindent
 set preserveindent
 
 set cursorline
+
+" double down on tab configuration
+autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
+autocmd FileType python set sw=4 sts=4 et
+
 
 " i love colors, oh my god
 syntax enable

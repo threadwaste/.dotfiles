@@ -15,4 +15,6 @@
 [merge]
     tool = vimdiff
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+[core]
+    excludesfile = ~/.gitignore
