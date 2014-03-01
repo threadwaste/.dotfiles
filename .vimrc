@@ -11,6 +11,7 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'chriskempson/base16-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'kien/ctrlp.vim'
 Bundle 'hdima/python-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'scrooloose/syntastic'
@@ -21,7 +22,6 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
 
 " basics
 set nocompatible
@@ -158,8 +158,9 @@ noremap <leader>l :call ToggleList()<cr>
 nnoremap <cr> :nohlsearch<cr>
 
 " ctrlp
-noremap <leader>b :CommandTBuffer<cr>
-noremap <leader>T :CommandT<space>
+noremap <leader>p :CtrlP<cr>
+noremap <leader>P :CtrlP<space>
+noremap <leader>b :CtrlPBuffer<cr>
 
 " syntastic
 let g:syntastic_enable_signs = 1
