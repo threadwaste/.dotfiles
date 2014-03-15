@@ -1,8 +1,5 @@
-[user]
-    email = tony@threadwaste.com
-    name = Anthony M.
-[color]
-    ui = auto
+[advice]
+    statusHints = false
 [alias]
     aa = add --all
     b = branch
@@ -10,11 +7,23 @@
     co = checkout
     dc = diff --cached
     dl = diff --name-only
+    grepp = grep --break --heading --line-number
     fa = fetch --all
     st = status
+[color]
+    ui = auto
+    diff = auto
+    grep = auto
+[grep]
+    extendedRegexp = true
 [merge]
+    summary = true
     tool = vimdiff
 [credential]
     helper = cache --timeout=3600
 [core]
     excludesfile = ~/.gitignore
+[push]
+    default = simple
+[include]
+    path = .gitconfig.local
