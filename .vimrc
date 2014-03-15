@@ -22,6 +22,7 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/taglist.vim'
 
 " basics
 set nocompatible
@@ -102,7 +103,7 @@ autocmd FileType python set sw=4 sts=4 et
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorschem base16-default
+colorschem base16-tomorrow
 
 " ---------
 " functions
@@ -161,6 +162,11 @@ nnoremap <cr> :nohlsearch<cr>
 noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
+
+" taglist
+noremap <leader>t :TlistToggle<cr>
+let g:Tlist_Close_On_Select = 1
+let g:Tlist_GainFocus_On_ToggleOpen = 1
 
 " syntastic
 let g:syntastic_enable_signs = 1
