@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/Vundle.vim'
 
 " ...and its Bundles
-Bundle 'chriskempson/base16-vim'
+Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/ctrlp.vim'
@@ -16,6 +16,7 @@ Bundle 'hdima/python-syntax'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'slim-template/vim-slim'
+Bundle 'sjl/badwolf'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fireplace'
@@ -103,7 +104,7 @@ autocmd FileType python set sw=4 sts=4 et
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorschem base16-tomorrow
+colorschem badwolf
 
 " ---------
 " functions
@@ -158,7 +159,23 @@ noremap <leader>l :call ToggleList()<cr>
 " clear hlsearch
 nnoremap <cr> :nohlsearch<cr>
 
+" airline
+let g:airline_theme = 'badwolf'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.whitespace = 'Ξ'
+
 " ctrlp
+let g:ctrlp_show_hidden = 1
+
 noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
