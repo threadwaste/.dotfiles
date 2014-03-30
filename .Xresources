@@ -5,6 +5,7 @@ Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
 urxvt256c*saveLines: 100000
+urxvt256c*scrollBar: false
 
 urxvt256c*font:      xft:SourceCodePro-10
 urxvt256c*boldFont:  xft:SourceCodePro Black-10
@@ -34,6 +35,8 @@ urxvt256c*depth: 32
 #define   tardis           #0a9dff
 #define   dress            #ff9eb8
 #define   darkroast        #88633f
+#define   coffee           #c7915b
+#define   dirtyblonde      #f4cf86
  
 *.foreground:   plain
 *.background:   blackgravel
@@ -48,8 +51,8 @@ urxvt256c*depth: 32
 *.color7:       plain
 *.color8:       mediumgravel
 *.color9:       orange
-*.color10:      darkgravel
-*.color11:      deepgravel
+*.color10:      coffee
+*.color11:      dirtyblonde
 *.color12:      gravel
 *.color13:      lightgravel
 *.color14:      darkroast
