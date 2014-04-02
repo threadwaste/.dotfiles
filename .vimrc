@@ -185,6 +185,10 @@ noremap <leader>t :TlistToggle<cr>
 let g:Tlist_Close_On_Select = 1
 let g:Tlist_GainFocus_On_ToggleOpen = 1
 
+if system('uname') =~? '^darwin'
+    let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+endif
+
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_open = 0
