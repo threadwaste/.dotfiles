@@ -11,8 +11,11 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'guns/vim-clojure-highlight'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'hdima/python-syntax'
+Bundle 'oscarh/vimerl'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'slim-template/vim-slim'
@@ -179,6 +182,9 @@ let g:ctrlp_show_hidden = 1
 noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
+
+" rainbow_parentheses
+noremap <leader>( :RainbowParenthesesToggle<cr>
 
 " taglist
 noremap <leader>t :TlistToggle<cr>
