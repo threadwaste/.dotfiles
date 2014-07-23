@@ -45,8 +45,8 @@ set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
 " indentation, the most important of things
 set autoindent
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set shiftround
 set backspace=indent,eol,start
 
@@ -57,7 +57,7 @@ set showmode
 set laststatus=2
 
 " wilds
-set wildignore=*.pyc
+set wildignore+=*.pyc,*/tmp/*,*/.bundle/*,*/.kitchen/*
 set wildmenu
 
 " character displays
@@ -106,7 +106,6 @@ autocmd FileType python set sw=4 sts=4 et
 
 " i love colors, oh my god
 syntax enable
-set background=dark
 colorschem badwolf
 
 " ---------
@@ -198,6 +197,8 @@ endif
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_open = 0
+
+let g:syntastic_puppet_puppetlint_args = '--no-80chars-check --no-class_parameter_defaults-check'
 
 " lazy stash
 " set viminfo='10,\"100,:20,%,n~/.viminfo
