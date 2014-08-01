@@ -57,7 +57,7 @@ set showmode
 set laststatus=2
 
 " wilds
-set wildignore+=*.pyc,*/tmp/*,*/.bundle/*,*/.kitchen/*
+set wildignore+=*.pyc,*/tmp/*,*/.tmp/*,*/.bundle/*,*/.kitchen/*,*/.librarian/*
 set wildmenu
 
 " character displays

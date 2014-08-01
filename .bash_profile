@@ -7,7 +7,9 @@
 [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
 
 # prompt
-export PS1="\u@\[\e[0;34m\]\h \[\e[0m\]\W\$(__git_ps1)$ "
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+export PROMPT_COMMAND='__git_ps1 "\u@\[\e[0;34m\]\h \[\e[0m\]\W" "\\\$ " " (⎇ %s)"'
 
 # grep color-me-pretty
 alias grep='grep --color=auto'
