@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/Vundle.vim'
 
 " ...and its Bundles
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
@@ -18,6 +19,7 @@ Bundle 'hdima/python-syntax'
 Bundle 'oscarh/vimerl'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'sjl/badwolf'
 Bundle 'tpope/vim-commentary'
@@ -106,7 +108,7 @@ autocmd FileType python set sw=4 sts=4 et
 
 " i love colors, oh my god
 syntax enable
-colorschem badwolf
+colorschem solarized
 
 " ---------
 " functions
@@ -151,6 +153,8 @@ endfunc
 " --------------------
 let mapleader=","
 
+call togglebg#map("<leader>,")
+
 " toggle line numbers
 noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
@@ -162,7 +166,7 @@ noremap <leader>l :call ToggleList()<cr>
 nnoremap <cr> :nohlsearch<cr>
 
 " airline
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'solarized'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
@@ -182,6 +186,21 @@ noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
 
+" neocomplete
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+
+let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#enable_smart_case = 1
+
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#max_list = 20
+let g:neocomplete#max_keyword_width = 40
+
+let g:neocomplete#min_keyword_length = 2
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+
 " rainbow_parentheses
 noremap <leader>( :RainbowParenthesesToggle<cr>
 
@@ -197,6 +216,12 @@ endif
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_open = 0
+
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '≈'
+let g:syntastic_style_warning_symbol = '≈'
+let g:syntastic_enable_balloons = 0
 
 let g:syntastic_puppet_puppetlint_args = '--no-80chars-check --no-class_parameter_defaults-check'
 
