@@ -5,34 +5,39 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vundle
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
-" ...and its Bundles
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'godlygeek/tabular'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/vim-clojure-highlight'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'hdima/python-syntax'
-Bundle 'oscarh/vimerl'
-Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'sjl/badwolf'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/taglist.vim'
+" util
+Plugin 'bling/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+
+" colors
+Plugin 'sjl/badwolf'
+
+" lang
+Plugin 'fatih/vim-go'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'hdima/python-syntax'
+Plugin 'oscarh/vimerl'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'vim-ruby/vim-ruby'
 
 " basics
 set nocompatible
 filetype plugin indent on
+
+set shell=/bin/bash
 
 set ruler
 set number
@@ -105,15 +110,11 @@ set cursorline
 autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
 
-
 " i love colors, oh my god
 syntax enable
-colorschem solarized
+colorscheme badwolf
 
-" ---------
 " functions
-" ---------
-
 function! ToggleLineNumbers()
     " toggle line number display
 
@@ -148,25 +149,17 @@ function! ToggleList()
     endif
 endfunc
 
-" --------------------
 " bindings and plugins
-" --------------------
+nnoremap <cr> :nohlsearch<cr>
+
 let mapleader=","
 
-call togglebg#map("<leader>,")
-
-" toggle line numbers
+noremap <leader>l :call ToggleList()<cr>
 noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
 
-" toggle listchars
-noremap <leader>l :call ToggleList()<cr>
-
-" clear hlsearch
-nnoremap <cr> :nohlsearch<cr>
-
 " airline
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'badwolf'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
@@ -186,15 +179,16 @@ noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
 
-" neocomplete
+" vim-go
+let g:go_fmt_autosave = 0
 
+" neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 
-let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#auto_completion_start_length = 4
 let g:neocomplete#enable_smart_case = 1
 
-let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#max_list = 20
 let g:neocomplete#max_keyword_width = 40
 
@@ -203,15 +197,6 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 " rainbow_parentheses
 noremap <leader>( :RainbowParenthesesToggle<cr>
-
-" taglist
-noremap <leader>t :TlistToggle<cr>
-let g:Tlist_Close_On_Select = 1
-let g:Tlist_GainFocus_On_ToggleOpen = 1
-
-if system('uname') =~? '^darwin'
-    let g:Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-endif
 
 " syntastic
 let g:syntastic_enable_signs = 1
@@ -225,6 +210,9 @@ let g:syntastic_enable_balloons = 0
 
 let g:syntastic_puppet_puppetlint_args = '--no-80chars-check --no-class_parameter_defaults-check'
 
+" tagbar
+noremap <leader>t :TagbarToggle<cr>
+
 " lazy stash
-" set viminfo='10,\"100,:20,%,n~/.viminfo
-" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+set viminfo='10,\"100,:20,%,n~/.viminfo
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
