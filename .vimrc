@@ -17,11 +17,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
 " colors
+Plugin 'chriskempson/base16-vim'
 Plugin 'sjl/badwolf'
 
 " lang
@@ -31,6 +31,7 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'hdima/python-syntax'
 Plugin 'oscarh/vimerl'
 Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'tpope/vim-fireplace'
 Plugin 'vim-ruby/vim-ruby'
 
 " basics
@@ -94,7 +95,7 @@ set ttyfast
 set notimeout
 set ttimeout
 
-" completion 
+" completion
 set completeopt=menuone,longest,preview
 
 " text management/visuals
@@ -108,11 +109,11 @@ set cursorline
 
 " double down on tab configuration
 autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
-autocmd FileType python set sw=4 sts=4 et
+autocmd FileType yaml,python set sw=4 sts=4 et
 
 " i love colors, oh my god
 syntax enable
-colorscheme badwolf
+colorscheme base16-tomorrow
 
 " functions
 function! ToggleLineNumbers()
@@ -159,7 +160,7 @@ noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
 
 " airline
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'base16'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
@@ -178,6 +179,15 @@ let g:ctrlp_show_hidden = 1
 noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
+
+let g:ctrlp_user_command = {
+  'types': {
+    1: ['.git', 'cd %s && git ls-files'],
+    2: ['.hg', 'hg --cwd %s locate -I .'],
+  },
+  'fallback': 'ag %s -i --nocolor --nogroup --hidden -g ""
+    \ --ignore .git --ignore .hg --ignore .DS_STORE'
+}
 
 " vim-go
 let g:go_fmt_autosave = 0
