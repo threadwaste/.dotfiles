@@ -108,8 +108,8 @@ set preserveindent
 set cursorline
 
 " double down on tab configuration
-autocmd FileType eruby,haml,puppet,ruby,sass set ai sw=2 sts=2 et
-autocmd FileType yaml,python set sw=4 sts=4 et
+autocmd FileType eruby,haml,puppet,ruby,html,yaml,sass set ai sw=2 sts=2 et
+autocmd FileType python set sw=4 sts=4 et
 
 " i love colors, oh my god
 syntax enable
@@ -155,6 +155,12 @@ nnoremap <cr> :nohlsearch<cr>
 
 let mapleader=","
 
+" saner split navigation
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 noremap <leader>l :call ToggleList()<cr>
 noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
@@ -180,14 +186,12 @@ noremap <leader>p :CtrlP<cr>
 noremap <leader>P :CtrlP<space>
 noremap <leader>b :CtrlPBuffer<cr>
 
-let g:ctrlp_user_command = {
-  'types': {
-    1: ['.git', 'cd %s && git ls-files'],
-    2: ['.hg', 'hg --cwd %s locate -I .'],
-  },
-  'fallback': 'ag %s -i --nocolor --nogroup --hidden -g ""
+let g:ctrlp_user_command = {}
+let g:ctrlp_user_command.types = {}
+let g:ctrlp_user_command.types.1 = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command.types.2 = ['.hg', 'hg --cwd %s locate -I .']
+let g:ctrlp_user_command.fallback = 'ag %s -i --nocolor --nogroup --hidden -g ""
     \ --ignore .git --ignore .hg --ignore .DS_STORE'
-}
 
 " vim-go
 let g:go_fmt_autosave = 0
