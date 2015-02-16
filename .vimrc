@@ -188,7 +188,7 @@ noremap <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_user_command = {}
 let g:ctrlp_user_command.types = {}
-let g:ctrlp_user_command.types.1 = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command.types.1 = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_user_command.types.2 = ['.hg', 'hg --cwd %s locate -I .']
 let g:ctrlp_user_command.fallback = 'ag %s -i --nocolor --nogroup --hidden -g ""
     \ --ignore .git --ignore .hg --ignore .DS_STORE'
