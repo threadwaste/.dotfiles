@@ -1,8 +1,5 @@
 # scroll opt
 defscrollback 10000
-
-# to enable mouse scrollback uncomment line 6 to push screen off of the
-# alternate screen buffer. will goof natural screen buffer.
 #termcapinfo xterm ti@:te@
 
 # hate
@@ -19,3 +16,4 @@ caption string "%{= } %{-b B}::%{-b w}%=%n%? (%t)%?%? [%h]%?"
 # status line
 hardstatus alwayslastline
 hardstatus string '%{= } %?%-w%?%{+b B}%n %{w}%t%?(%u)%?%?%{-b d}%+w%? %= %{-b w}%c%{+b B}%a '
+
