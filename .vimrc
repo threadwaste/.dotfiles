@@ -46,9 +46,9 @@ set numberwidth=5
 set hidden
 
 " backups
-set backup
-set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+set nobackup
+set backupdir=~/.vim-tmp,~/tmp,/tmp
+set directory=~/.vim-tmp//,~/tmp//,/tmp//
 
 " indentation, the most important of things
 set autoindent
@@ -57,6 +57,7 @@ set shiftwidth=2
 set softtabstop=2
 set shiftround
 set backspace=indent,eol,start
+set nojoinspaces
 
 " info
 set title
