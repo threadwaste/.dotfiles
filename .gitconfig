@@ -8,6 +8,7 @@
     dc = diff --cached
     dl = diff --name-only
     grepp = grep --break --heading --line-number
+    glog = log --graph --decorate --oneline --abbrev-commit
     fa = fetch --all
     st = status
 [color]
