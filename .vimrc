@@ -2,37 +2,40 @@
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
 
-" Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " util
-Plugin 'bling/vim-airline'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 " colors
-Plugin 'chriskempson/base16-vim'
-Plugin 'sjl/badwolf'
+Plug 'chriskempson/base16-vim'
+Plug 'sjl/badwolf'
 
 " lang
-Plugin 'fatih/vim-go'
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'hdima/python-syntax'
-Plugin 'oscarh/vimerl'
-Plugin 'puppetlabs/puppet-syntax-vim'
-Plugin 'tpope/vim-fireplace'
-Plugin 'vim-ruby/vim-ruby'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+Plug 'oscarh/vimerl', { 'for': 'erlang' }
+
+Plug 'fatih/vim-go', { 'for': 'go' }
+
+Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'puppetlabs/puppet-syntax-vim', { 'for': 'puppet' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+call plug#end()
 
 " basics
 set nocompatible
