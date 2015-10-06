@@ -1,8 +1,6 @@
 " vundle and plug-ins
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
 call plug#begin('~/.vim/bundle')
 
 " util
@@ -12,14 +10,13 @@ Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 " colors
-Plug 'chriskempson/base16-vim'
 Plug 'sjl/badwolf'
 
 " lang
@@ -114,10 +111,12 @@ set cursorline
 " double down on tab configuration
 autocmd FileType eruby,haml,puppet,ruby,html,yaml,sass set ai sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
+autocmd FileType go set noet sw=4 sts=4 ts=4
 
 " i love colors, oh my god
 syntax enable
-colorscheme base16-tomorrow
+set background=dark
+colorscheme badwolf
 
 " functions
 function! ToggleLineNumbers()
@@ -160,17 +159,17 @@ nnoremap <cr> :nohlsearch<cr>
 let mapleader=","
 
 " saner split navigation
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 noremap <leader>l :call ToggleList()<cr>
 noremap <leader>n :call ToggleLineNumbers()<cr>
 noremap <leader>N :call ToggleLineType()<cr>
 
 " airline
-let g:airline_theme = 'base16'
+let g:airline_theme = 'badwolf'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
@@ -182,6 +181,10 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.whitespace = 'Ξ'
+
+" badwolf
+let g:badwolf_html_link_underline = 1
+let g:badwolf_css_props_highlight = 1
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
@@ -199,19 +202,6 @@ let g:ctrlp_user_command.fallback = 'ag %s -i --nocolor --nogroup --hidden -g ""
 
 " vim-go
 let g:go_fmt_autosave = 0
-
-" neocomplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-
-let g:neocomplete#auto_completion_start_length = 4
-let g:neocomplete#enable_smart_case = 1
-
-let g:neocomplete#max_list = 20
-let g:neocomplete#max_keyword_width = 40
-
-let g:neocomplete#min_keyword_length = 2
-let g:neocomplete#sources#syntax#min_keyword_length = 2
 
 " rainbow_parentheses
 noremap <leader>( :RainbowParenthesesToggle<cr>
@@ -231,6 +221,10 @@ let g:syntastic_puppet_puppetlint_args = '--no-80chars-check --no-class_paramete
 " tagbar
 noremap <leader>t :TagbarToggle<cr>
 
+" ycm
+let g:ycm_min_num_of_chars_for_completion = 3
+
 " lazy stash
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
