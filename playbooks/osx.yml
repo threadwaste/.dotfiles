@@ -1,0 +1,5 @@
+- hosts: self
+  gather_facts: false
+  tasks:
+    - include: tasks/homedir.yml
+    - include: tasks/homebrew.yml

@@ -1,0 +1,2 @@
+- name: synchronizes homedir
+  synchronize: src=../homedir/ dest=~ dirs=yes

@@ -1,0 +1,40 @@
+- name: tap additional brew repositories
+  homebrew_tap: tap={{ item }} state=present
+  with_items:
+    - homebrew/binary
+    - homebrew/dupes
+- name: brew update and cleanup
+  shell: brew update && brew cleanup
+- name: install essentials
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - awscli
+    - ctags
+    - curl
+    - fish
+    - fzf
+    - leiningen
+    - maven
+    - mobile-shell
+    - neovim
+    - nmap
+    - openssl
+    - packer
+    - rar
+    - reattach-to-user-namespace
+    - ssh-copy-id
+    - the_silver_searcher
+    - terraform
+    - tmux
+    - tree
+    - unrar
+    - watch
+    - wget
+- name: install duplicity
+  homebrew: name=duplicity state=latest install_options=with-par2
+- name: install git
+  homebrew: name=git state=latest install_options=with-brewed-curl,with-brewed-openssl
+- name: install macvim
+  homebrew: name=macvim state=latest install_options=with-lua,with-luajit
+- name: install vim
+  homebrew: name=vim state=latest install_options=with-lua,with-luajit,override-system-vi
