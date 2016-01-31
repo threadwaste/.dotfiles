@@ -4,7 +4,6 @@ filetype off
 call plug#begin('~/.vim/bundle')
 
 " util
-Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -15,6 +14,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " colors
 Plug 'sjl/badwolf'
@@ -234,6 +235,7 @@ noremap <leader>t :TagbarToggle<cr>
 let g:ycm_min_num_of_chars_for_completion = 3
 
 " lazy stash
-set viminfo='10,\"100,:20,%,n~/.viminfo
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
+if ! has("nvim")
+  set viminfo='10,\"100,:20,%,n~/.viminfo
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
