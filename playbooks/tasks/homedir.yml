@@ -1,2 +1,6 @@
 - name: synchronizes homedir
   synchronize: src=../homedir/ dest=~ dirs=yes
+- name: symlink .nvim
+  file: path=~/.nvim src=~/.vim state=link
+- name: symlink .nvimrc
+  file: path=~/.nvimrc src=~/.vimrc state=link
