@@ -11,6 +11,8 @@
     glog = log --graph --decorate --oneline --abbrev-commit
     fa = fetch --all
     st = status
+    uncommit = reset --soft HEAD^
+    unstage = reset HEAD
 [color]
     ui = auto
     diff = auto
@@ -21,9 +23,10 @@
     summary = true
     tool = vimdiff
 [credential]
-    helper = cache --timeout=3600
+    helper = osxkeychain
 [core]
     excludesfile = ~/.gitignore
+    autocrlf = input
 [push]
     default = simple
 [include]
