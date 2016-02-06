@@ -3,6 +3,7 @@
   with_items:
     - homebrew/binary
     - homebrew/dupes
+    - caskroom/fonts
     - neovim/neovim
 - name: brew update and cleanup
   shell: brew update && brew cleanup
@@ -12,6 +13,7 @@
     - awscli
     - ctags
     - curl
+    - duplicity
     - fish
     - fzf
     - leiningen
@@ -30,8 +32,20 @@
     - unrar
     - watch
     - wget
-- name: install duplicity
-  homebrew: name=duplicity state=latest install_options=with-par2
+- name: install fonts
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - font-hack
+    - font-source-code-pro
+- name: install core casks
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - 1password
+    - dockertoolbox
+    - dropbox
+    - flux
+    - iterm2
+    - virtualbox
 - name: install git
   homebrew: name=git state=latest install_options=with-brewed-curl,with-brewed-openssl
 - name: install macvim
