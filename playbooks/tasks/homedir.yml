@@ -1,5 +1,7 @@
 - name: synchronizes homedir
   synchronize: src=../homedir/ dest=~ dirs=yes
+  tags:
+    - homedir
 - name: symlink .vim for neovim
   file: path=~/.config/nvim src=~/.vim state=link
 - name: symlink .vimrc for neovim
