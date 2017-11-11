@@ -22,8 +22,9 @@
     - nmap
     - openssl
     - packer
-    - rar
+    - rbenv
     - reattach-to-user-namespace
+    - ruby-build
     - ssh-copy-id
     - the_silver_searcher
     - terraform
@@ -40,16 +41,12 @@
 - name: install core casks
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - 1password
-    - dockertoolbox
     - dropbox
     - flux
+    - google-drive
     - iterm2
-    - virtualbox
 - name: install git
   homebrew: name=git state=latest install_options=with-brewed-curl,with-brewed-openssl
-- name: install macvim
-  homebrew: name=macvim state=latest install_options=with-lua,with-luajit
 - name: install neovim
   homebrew: name=neovim state=head
 - name: install vim
