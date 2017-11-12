@@ -4,23 +4,25 @@ filetype off
 call plug#begin('~/.vim/bundle')
 
 " util
+Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-bufferline'
 Plug 'godlygeek/tabular'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " colors
 Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
 
 " lang
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
@@ -30,6 +32,8 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'oscarh/vimerl', { 'for': 'erlang' }
 
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'sebdah/vim-delve', { 'for': 'go' }
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'puppetlabs/puppet-syntax-vim', { 'for': 'puppet' }
@@ -120,7 +124,7 @@ autocmd FileType go set noet sw=4 sts=4 ts=4
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorscheme badwolf
+colorscheme gruvbox
 
 " functions
 function! ToggleLineNumbers()
@@ -175,7 +179,7 @@ noremap <leader>N :call ToggleLineType()<cr>
 " airline
 let g:airline#extensions#bufferline#enabled = 1
 
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'gruvbox'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -209,6 +213,11 @@ let g:ctrlp_user_command.types.1 = ['.git', 'git --git-dir=%s/.git ls-files -oc 
 let g:ctrlp_user_command.types.2 = ['.hg', 'hg --cwd %s locate -I .']
 let g:ctrlp_user_command.fallback = 'ag %s -i --nocolor --nogroup --hidden -g ""
     \ --ignore .git --ignore .hg --ignore .DS_STORE'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " vim-go
 let g:go_fmt_autosave = 0

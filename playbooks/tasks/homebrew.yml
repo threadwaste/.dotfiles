@@ -49,5 +49,3 @@
   homebrew: name=git state=latest install_options=with-brewed-curl,with-brewed-openssl
 - name: install neovim
   homebrew: name=neovim state=head
-- name: install vim
-  homebrew: name=vim state=latest install_options=with-lua,with-luajit,override-system-vi
