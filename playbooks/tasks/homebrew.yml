@@ -5,12 +5,14 @@
     - homebrew/dupes
     - caskroom/fonts
     - neovim/neovim
+    - crisidev/homebrew-chunkwm
 - name: brew update and cleanup
   shell: brew update && brew cleanup
 - name: install essentials
   homebrew: name={{ item }} state=latest
   with_items:
     - awscli
+    - chunkwm
     - ctags
     - curl
     - duplicity
@@ -25,6 +27,7 @@
     - rbenv
     - reattach-to-user-namespace
     - ruby-build
+    - skhd
     - ssh-copy-id
     - the_silver_searcher
     - terraform
