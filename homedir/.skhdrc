@@ -52,10 +52,10 @@ shift + alt - k : chunkc tiling::window --swap north
 shift + alt - l : chunkc tiling::window --swap east
 
 # move window
-shift + cmd - h : chunkc tiling::window --warp west
-shift + cmd - j : chunkc tiling::window --warp south
-shift + cmd - k : chunkc tiling::window --warp north
-shift + cmd - l : chunkc tiling::window --warp east
+shift + ctrl - h : chunkc tiling::window --warp west
+shift + ctrl - j : chunkc tiling::window --warp south
+shift + ctrl - k : chunkc tiling::window --warp north
+shift + ctrl - l : chunkc tiling::window --warp east
 
 # send window to desktop
 shift + alt - 1 : chunkc tiling::window --send-to-desktop 1
