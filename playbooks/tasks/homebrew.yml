@@ -36,10 +36,12 @@
     - unrar
     - watch
     - wget
+    - zsh
 - name: install fonts
   homebrew_cask: name={{ item }} state=present
   with_items:
     - font-hack
+    - font-iosevka
     - font-source-code-pro
 - name: install core casks
   homebrew_cask: name={{ item }} state=present
