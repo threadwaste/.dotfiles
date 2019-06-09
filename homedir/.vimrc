@@ -7,6 +7,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-bufferline'
 Plug 'godlygeek/tabular'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
@@ -21,10 +23,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " colors
-Plug 'sjl/badwolf'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'morhetz/gruvbox'
+Plug 'sjl/badwolf'
 
 " lang
+Plug 'ballerina-attic/plugin-vim', { 'for': 'ballerina' }
+
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -34,6 +39,8 @@ Plug 'oscarh/vimerl', { 'for': 'erlang' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'sebdah/vim-delve', { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
+
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 
 Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'puppetlabs/puppet-syntax-vim', { 'for': 'puppet' }
@@ -124,7 +131,8 @@ autocmd FileType go set noet sw=4 sts=4 ts=4
 " i love colors, oh my god
 syntax enable
 set background=dark
-colorscheme gruvbox
+set termguicolors
+colorscheme plain
 
 " functions
 function! ToggleLineNumbers()
@@ -179,7 +187,7 @@ noremap <leader>N :call ToggleLineType()<cr>
 " airline
 let g:airline#extensions#bufferline#enabled = 1
 
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'minimalist'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -220,7 +228,7 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " vim-go
-let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"
 
 " rainbow_parentheses
 noremap <leader>( :RainbowParenthesesToggle<cr>
