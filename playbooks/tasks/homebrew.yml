@@ -15,7 +15,6 @@
     state: latest
     name:
       - awscli
-      - chunkwm
       - ctags
       - curl
       - duplicity
@@ -40,6 +39,7 @@
       - unrar
       - watch
       - wget
+      - yabai
       - zsh
 - name: install fonts
   homebrew_cask:
