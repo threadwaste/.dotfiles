@@ -6,6 +6,10 @@
     - koekeishiya/formulae
 - name: brew update and cleanup
   shell: brew update && brew cleanup
+- name: install openjdk
+  homebrew_cask:
+    state: latest
+    name: adoptopenjdk
 - name: install essentials
   homebrew:
     state: latest
