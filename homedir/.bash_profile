@@ -4,7 +4,8 @@
 # source 
 [ -s ~/bin/git-prompt.sh ] && source ~/bin/git-prompt.sh
 [ -s ~/bin/git-completion.bash ] && source ~/bin/git-completion.bash
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+
+eval "$(rbenv init -)"
 
 # prompt
 export GIT_PS1_SHOWDIRTYSTATE=1

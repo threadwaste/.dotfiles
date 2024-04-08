@@ -24,7 +24,11 @@ set -g ___fish_git_prompt_char_stagedstate '+'
 set -g ___fish_git_prompt_char_stashstate '$'
 set -g ___fish_git_prompt_char_untrackedfiles '…'
 
-set -xg GOPATH ~/ws/go
-set -xg PATH $HOME/.rbenv/shims $GOPATH/bin $PATH
+if test -d /opt/homebrew/bin
+  set PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
+end
 
-rbenv rehash >/dev/null ^&1
+set -xg GOPATH ~/ws/go
+set -xg PATH $HOME/.rbenv/shims $PATH
+
+rbenv rehash >/dev/null 2>&1
