@@ -48,9 +48,7 @@
   homebrew_cask:
     state: present
     name:
-      - dropbox
       - flux
-      - google-drive-file-stream
       - kitty
 - name: install neovim
   homebrew:
