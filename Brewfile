@@ -39,5 +39,5 @@ mas "Bear Markdown Notes", id: 1091189122
 mas "Flow", id: 1423210932
 
 # personal packages (deployed to ~/Brewfile.personal by sync.sh)
-brewfile "~/Brewfile.personal"
+require "~/Brewfile.personal" if File.exist? "~/Brewfile.personal"
 
