@@ -4,4 +4,4 @@ A .dotfiles repository for mobility and sanity.
 
   - Install [Homebrew](http://brew.sh)
   - `brew bundle`
-  - `./sync.sh`
+  - `./sync.sh` (or `./sync.sh -w` on work machines)

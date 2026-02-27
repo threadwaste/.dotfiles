@@ -9,8 +9,11 @@ rsync_options=(-av --relative --recursive --itemize-changes)
 src="homedir/./"
 tgt="${HOME}"
 
-while getopts "u" arg; do
+while getopts "uw" arg; do
   case "${arg}" in
+    w)
+      rsync_options+=(--exclude=Brewfile.personal)
+      ;;
     u)
       t=$(mktemp)
       find homedir -type f | cut -d/ -f2- > $t
@@ -22,7 +25,7 @@ while getopts "u" arg; do
 
       ;;
     *)
-      echo "usage: $(basename ${0}) [-u]"
+      echo "usage: $(basename ${0}) [-u] [-w]"
       exit 1
       ;;
   esac
