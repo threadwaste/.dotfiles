@@ -1,0 +1,50 @@
+# window
+window-width        = 256
+window-height       = 80
+window-padding-x    = 10
+window-padding-y    = 10
+background-opacity  = 0.95
+macos-option-as-alt = left
+
+# selection
+copy-on-select = clipboard
+
+# cursor
+cursor-style            = underline
+cursor-style-blink      = true
+adjust-cursor-thickness = 1
+
+# mouse
+mouse-hide-while-typing = true
+
+# font
+font-family             = "Berkeley Mono"
+font-size               = 16
+font-style              = "Regular"
+font-style-italic       = "Regular Italic"
+font-style-bold         = "Bold"
+font-style-bold-italic  = "Bold Italic"
+
+# colors
+background = 000000
+foreground = ffffff
+
+# normal
+palette = 0=#3d3e3d
+palette = 1=#755a5b
+palette = 2=#68755a
+palette = 3=#756e5a
+palette = 4=#5b6976
+palette = 5=#755b76
+palette = 6=#465457
+palette = 7=#ccccc6
+
+# bright
+palette = 8=#5a5b5c
+palette = 9=#a37679
+palette = 10=#87a379
+palette = 11=#a39b76
+palette = 12=#758ba3
+palette = 13=#9f76a3
+palette = 14=#899ca1
+palette = 15=#f8f8f2

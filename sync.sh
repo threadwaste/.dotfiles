@@ -4,9 +4,9 @@ set -x
 
 cd $(dirname "${0}")
 
-rsync_options=(-av --relative --recursive --itemize-changes)
+rsync_options=(-av --recursive --itemize-changes)
 
-src="homedir/./"
+src="homedir/"
 tgt="${HOME}"
 
 while getopts "uw" arg; do
@@ -18,9 +18,9 @@ while getopts "uw" arg; do
       t=$(mktemp)
       find homedir -type f | cut -d/ -f2- > $t
       
-      rsync_options+=(--update --existing --files-from=${t})
+      rsync_options+=(--update --files-from=${t})
 
-      src="${HOME}/./"
+      src="${HOME}/"
       tgt="homedir"
 
       ;;
