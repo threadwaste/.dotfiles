@@ -7,6 +7,7 @@ brew "duplicity"
 cask "google-chrome@dev"
 brew "mas"
 cask "raycast"
+brew "rectangle"
 cask "texturepacker"
 
 # mas

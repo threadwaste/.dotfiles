@@ -29,7 +29,3 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "xsel"
-
-# personal packages (deployed to ~/Brewfile.personal by sync.sh)
-require "~/Brewfile.personal" if File.exist? "~/Brewfile.personal"
-
