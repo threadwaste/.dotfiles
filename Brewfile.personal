@@ -7,12 +7,12 @@ brew "duplicity"
 cask "google-chrome@dev"
 brew "mas"
 cask "raycast"
-brew "rectangle"
+cask "rectangle"
 cask "texturepacker"
 
 # mas
 mas "Flow", id: 1423210932
 mas "Pixelmator Pro", id: 1289583905
 mas "Slack for Desktop", id: 803453959
-mas "Tailscale", id: 1475387143
+mas "Tailscale", id: 1475387142
 
