@@ -31,4 +31,6 @@ end
 set -xg GOPATH ~/ws/go
 set -xg PATH $HOME/.rbenv/shims $PATH
 
+set -xg SSH_AUTH_SOCK $HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+
 rbenv rehash >/dev/null 2>&1
